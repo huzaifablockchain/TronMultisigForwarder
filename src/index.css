@@ -1,0 +1,184 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* TRON-themed cyberpunk design system */
+    --background: 222 84% 5%;
+    --foreground: 180 100% 90%;
+
+    --card: 222 84% 8%;
+    --card-foreground: 180 100% 95%;
+
+    --popover: 222 84% 6%;
+    --popover-foreground: 180 100% 95%;
+
+    /* TRON primary colors - electric blue */
+    --primary: 184 100% 50%;
+    --primary-foreground: 222 84% 5%;
+    --primary-glow: 184 100% 70%;
+
+    /* Secondary - darker blue */
+    --secondary: 222 84% 12%;
+    --secondary-foreground: 180 100% 95%;
+
+    /* Muted - dark grey-blue */
+    --muted: 222 30% 15%;
+    --muted-foreground: 180 20% 65%;
+
+    /* Accent - cyan highlight */
+    --accent: 180 100% 50%;
+    --accent-foreground: 222 84% 5%;
+
+    /* Success - green */
+    --success: 120 100% 50%;
+    --success-foreground: 222 84% 5%;
+
+    /* Warning - orange */
+    --warning: 30 100% 50%;
+    --warning-foreground: 222 84% 5%;
+
+    /* Destructive - red */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 180 100% 95%;
+
+    --border: 222 30% 20%;
+    --input: 222 30% 18%;
+    --ring: 184 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(184 100% 50%), hsl(184 100% 70%));
+    --gradient-secondary: linear-gradient(135deg, hsl(222 84% 8%), hsl(222 84% 12%));
+    --gradient-glow: linear-gradient(135deg, hsl(184 100% 50% / 0.2), hsl(180 100% 50% / 0.2));
+    
+    /* Shadows */
+    --shadow-glow: 0 0 20px hsl(184 100% 50% / 0.3);
+    --shadow-intense: 0 0 40px hsl(184 100% 50% / 0.5);
+    --shadow-card: 0 8px 32px hsl(222 84% 4% / 0.8);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --pulse-glow: pulse-glow 2s ease-in-out infinite alternate;
+
+    --sidebar-background: 222 84% 6%;
+    --sidebar-foreground: 180 100% 90%;
+    --sidebar-primary: 184 100% 50%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 222 84% 10%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 184 100% 50%;
+  }
+
+  .dark {
+    /* Already dark theme - keep same values */
+    --background: 222 84% 5%;
+    --foreground: 180 100% 90%;
+    --card: 222 84% 8%;
+    --card-foreground: 180 100% 95%;
+    --popover: 222 84% 6%;
+    --popover-foreground: 180 100% 95%;
+    --primary: 184 100% 50%;
+    --primary-foreground: 222 84% 5%;
+    --secondary: 222 84% 12%;
+    --secondary-foreground: 180 100% 95%;
+    --muted: 222 30% 15%;
+    --muted-foreground: 180 20% 65%;
+    --accent: 180 100% 50%;
+    --accent-foreground: 222 84% 5%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 180 100% 95%;
+    --border: 222 30% 20%;
+    --input: 222 30% 18%;
+    --ring: 184 100% 50%;
+    --sidebar-background: 222 84% 6%;
+    --sidebar-foreground: 180 100% 90%;
+    --sidebar-primary: 184 100% 50%;
+    --sidebar-primary-foreground: 222 84% 5%;
+    --sidebar-accent: 222 84% 10%;
+    --sidebar-accent-foreground: 180 100% 95%;
+    --sidebar-border: 222 30% 20%;
+    --sidebar-ring: 184 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground overflow-x-hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom animations */
+  @keyframes pulse-glow {
+    0% { box-shadow: 0 0 5px hsl(var(--primary) / 0.3); }
+    100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.6); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes slide-in {
+    0% { transform: translateX(-100%); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+  }
+
+  /* Utility classes */
+  .glow {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-intense {
+    box-shadow: var(--shadow-intense);
+  }
+
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-secondary {
+    background: var(--gradient-secondary);
+  }
+
+  .animate-pulse-glow {
+    animation: var(--pulse-glow);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-slide-in {
+    animation: slide-in 0.5s ease-out;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--primary) / 0.5);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--primary) / 0.8);
+  }
+}
