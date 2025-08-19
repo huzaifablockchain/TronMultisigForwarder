@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card } from '@/components/ui/card';
-import { useTronLink } from '@/hooks/useTronLink';
-import { useForwarder } from '@/hooks/useForwarder';
+// import { useState } from 'react';
+import { Badge } from '../components/ui/badge';
+import { Button } from '../components/ui/button';
+import { Card } from '../components/ui/card';
+import { useTronLink } from '../hooks/useTronLink';
+import { useForwarder } from '../hooks/useForwarder';
 import { Shield, Wallet, Network, Zap, AlertTriangle } from 'lucide-react';
 
 export const TronShieldHeader = () => {
@@ -51,7 +51,7 @@ export const TronShieldHeader = () => {
             <Shield className="h-8 w-8 text-primary animate-pulse-glow" />
             <div>
               <h1 className="text-2xl font-bold gradient-primary bg-clip-text text-transparent">
-                TRON Shield Vault
+                TRON Multisig Forwarder
               </h1>
               <p className="text-sm text-muted-foreground">
                 Multisig Auto-Forwarder • TronLink Hybrid

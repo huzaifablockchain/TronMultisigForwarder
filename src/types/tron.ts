@@ -36,6 +36,7 @@ export interface ForwardingConfig {
   feeReserve: number;
   pollInterval: number;
   tronFullHost: string;
+  apiKey: string;
 }
 
 export interface LogEntry {

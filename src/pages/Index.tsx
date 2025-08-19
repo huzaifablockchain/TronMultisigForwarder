@@ -1,9 +1,9 @@
-import { TronShieldHeader } from '@/components/TronShieldHeader';
-import { ConfigPanel } from '@/components/ConfigPanel';
-import { ControlPanel } from '@/components/ControlPanel';
-import { ForwardingSteps } from '@/components/ForwardingSteps';
-import { ActivityLog } from '@/components/ActivityLog';
-import { useForwarder } from '@/hooks/useForwarder';
+import { TronShieldHeader } from '../components/TronShieldHeader';
+import { ConfigPanel } from '../components/ConfigPanel';
+import { ControlPanel } from '../components/ControlPanel';
+import { ForwardingSteps } from '../components/ForwardingSteps';
+import { ActivityLog } from '../components/ActivityLog';
+import { useForwarder } from '../hooks/useForwarder';
 
 const Index = () => {
   const { logs, currentSteps, config, clearLogs } = useForwarder();

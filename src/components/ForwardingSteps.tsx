@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { ForwardingStep } from '@/types/tron';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Badge } from '../components/ui/badge';
+import { ForwardingStep } from '../types/tron';
 import { CheckCircle, Circle, AlertCircle, Clock } from 'lucide-react';
 
 interface ForwardingStepsProps {

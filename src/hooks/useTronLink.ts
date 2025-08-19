@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { TronLinkWindow, TronWebInstance } from '@/types/tron';
-import { useToast } from '@/hooks/use-toast';
+import { useToast } from '../hooks/use-toast';
 
 export const useTronLink = () => {
   const [isConnected, setIsConnected] = useState(false);
@@ -127,7 +127,7 @@ export const useTronLink = () => {
 
         return true;
       } else {
-        throw new Error('Failed to get wallet address');
+        throw new Error('TronLink is lock');
       }
     } catch (error: any) {
       console.error('TronLink connection failed:', error);

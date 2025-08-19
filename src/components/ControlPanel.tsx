@@ -1,11 +1,13 @@
 import { useState } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Card, CardContent, CardHeader, CardTitle } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { Badge } from '../components/ui/badge';
+import { Alert, AlertDescription } from '../components/ui/alert';
 import { Play, Square, RefreshCw, AlertTriangle, Shield } from 'lucide-react';
-import { useTronLink } from '@/hooks/useTronLink';
-import { useForwarder } from '@/hooks/useForwarder';
+import { useTronLink } from '../hooks/useTronLink';
+import { useForwarder } from '../hooks/useForwarder';
+
+
 
 export const ControlPanel = () => {
   const { isConnected, connect, approvingAddress } = useTronLink();
@@ -64,14 +66,6 @@ export const ControlPanel = () => {
       warnings.push('2-of-2 multisig not configured on receiving wallet');
     }
     
-    if (multisigStatus.threshold > 0 && !multisigStatus.hasReceivingKey) {
-      warnings.push('Receiving wallet key not found in multisig setup');
-    }
-    
-    if (multisigStatus.threshold > 0 && !multisigStatus.hasApprovingKey) {
-      warnings.push('Approving wallet key not found in multisig setup');
-    }
-
     return warnings;
   };
 
